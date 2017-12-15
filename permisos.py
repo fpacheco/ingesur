@@ -16,6 +16,9 @@ own_pugid = getgrnam(own_pugname).gr_gid
 own_prgname = "ingesuradm"
 own_prgid = getgrnam(own_prgname).gr_gid
 
+own_cogname = "ingesurcont"
+own_cogid = getgrnam(own_cogname).gr_gid
+
 dirperm = 0o0770
 filperm = 0o0660 
 
@@ -47,4 +50,4 @@ def permi(path, pu_uid, pu_gid, dirperm=0o0770, filperm=0o0660, pr_name=None, pr
     except BaseException as e:
         print(str(e))
 
-permi(pub_path,own_uid,own_pugid,dirperm,filperm,pri_name,own_uid,own_prgid,True)
+permi(pub_path,own_uid,own_pugid,dirperm,filperm,pri_name,own_uid,own_cogid,True)
